@@ -7,4 +7,9 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowContentTransitions" tools:targetApi="lollipop">true</item>
     </style>
+
+    <style name="grayThemeOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="colorControlNormal">@color/gray</item>
+    </style>
+
 </resources>

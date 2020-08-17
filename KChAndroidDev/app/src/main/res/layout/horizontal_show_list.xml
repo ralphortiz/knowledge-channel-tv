@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="135dp"
-    android:layout_height="140dp">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="3dp"
+    android:layout_marginRight="6dp">
 
     <ImageView
         android:id="@+id/ivThumbnail"
-        android:layout_width="125dp"
-        android:layout_height="125dp"
+        android:layout_width="120dp"
+        android:layout_height="165dp"
         android:clickable="true"
-        android:scaleType="centerCrop"
-        android:src="@drawable/thumbnail1"
         android:focusable="true"
-        android:foreground="?attr/selectableItemBackgroundBorderless"/>
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:scaleType="centerCrop"
+        android:src="@drawable/thumbnail1" />
 
     <TextView
         android:id="@+id/tvTitle"
-        android:layout_width="125dp"
-        android:singleLine="true"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/ivThumbnail"
+        android:ellipsize="end"
+        android:maxLines="1"
         android:text="Title"
         android:textColor="@color/white"
-        android:textSize="12dp"
+        android:textSize="12sp"
         android:textStyle="bold" />
-
 
 </RelativeLayout>

@@ -13,8 +13,8 @@
 
         <ImageView
             android:id="@+id/exo_rew"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_gravity="center_vertical"
             android:layout_marginEnd="35dp"
             android:layout_marginRight="35dp"
@@ -22,14 +22,14 @@
 
         <ImageView
             android:id="@+id/exo_play"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:src="@drawable/ic_play" />
 
         <ImageView
             android:id="@+id/exo_pause"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:src="@drawable/ic_pause" />
 
         <ImageView
@@ -60,7 +60,8 @@
                 android:id="@+id/exo_position"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textSize="12sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -68,19 +69,21 @@
                 android:layout_marginLeft="4dp"
                 android:layout_marginRight="4dp"
                 android:text="/"
-                android:textColor="#CBCDC8" />
+                android:textColor="#CBCDC8"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/exo_duration"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textColor="#CBCDC8" />
+                android:textColor="#CBCDC8"
+                android:textSize="12sp" />
 
             <ImageView
                 android:id="@+id/btnFullscreen"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:src="@drawable/ic_fullscreen" />
 
         </LinearLayout>
@@ -89,6 +92,7 @@
             android:id="@+id/exo_progress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:bar_height="3dp"
             app:buffered_color="#95989f"
             app:played_color="@color/darkOrange"
             app:unplayed_color="#45424E" />

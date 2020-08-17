@@ -15,11 +15,11 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
             android:layout_width="312dp"
-            android:layout_height="397dp"
+            android:layout_height="390dp"
             android:layout_centerInParent="true"
             android:layout_centerVertical="true"
             android:elevation="0dp"
-            app:cardBackgroundColor="#ccffffff"
+            app:cardBackgroundColor="#C2ffffff"
             app:cardCornerRadius="15dp">
 
             <LinearLayout
@@ -37,54 +37,77 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/etRegFullname"
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="268dp"
-                    android:layout_height="45dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="23dp"
-                    android:layout_marginBottom="13dp"
-                    android:background="@drawable/bg_textbox"
-                    android:elevation="3dp"
-                    android:gravity="center"
-                    android:hint="FULLNAME"
-                    android:singleLine="true"
-                    android:textColor="@color/gray"
-                    android:textColorHint="@color/opacityGray"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false">
 
+                    <EditText
+                        android:id="@+id/etRegFullname"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_textbox"
+                        android:hint="Full Name"
+                        android:singleLine="true"
+                        android:textColor="@color/gray"
+                        android:textColorHint="@color/opacityGray"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/etRegEmail"
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="268dp"
-                    android:layout_height="45dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginBottom="13dp"
-                    android:background="@drawable/bg_textbox"
-                    android:elevation="3dp"
-                    android:gravity="center"
-                    android:hint="EMAIL"
-                    android:singleLine="true"
-                    android:textColor="@color/gray"
-                    android:textColorHint="@color/opacityGray"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:layout_marginBottom="10dp"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false">
 
-                <EditText
-                    android:id="@+id/etRegPassword"
+                    <EditText
+                        android:id="@+id/etRegEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_textbox"
+                        android:hint="Email"
+                        android:singleLine="true"
+                        android:textColor="@color/gray"
+                        android:textColorHint="@color/opacityGray"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="268dp"
-                    android:layout_height="45dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:background="@drawable/bg_textbox"
-                    android:elevation="3dp"
-                    android:gravity="center"
-                    android:hint="PASSWORD"
-                    android:singleLine="true"
-                    android:textColor="@color/gray"
-                    android:textColorHint="@color/opacityGray"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false"
+                    app:passwordToggleEnabled="true">
+
+                    <EditText
+                        android:id="@+id/etRegPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_textbox"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:maxLength="16"
+                        android:singleLine="true"
+                        android:textColor="@color/gray"
+                        android:textColorHint="@color/opacityGray"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -93,7 +116,7 @@
                     android:layout_marginTop="8dp">
 
                     <com.google.android.material.checkbox.MaterialCheckBox
-                        android:id="@+id/cb_terms"
+                        android:id="@+id/cbTerms"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
@@ -102,8 +125,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_marginRight="2dp"
-                        android:layout_toRightOf="@id/cb_terms"
+                        android:layout_marginRight="3dp"
+                        android:layout_toRightOf="@id/cbTerms"
                         android:text="I read and agree to"
                         android:textColor="@color/gray"
                         android:textSize="12sp" />
@@ -120,15 +143,29 @@
 
                 </RelativeLayout>
 
+                <TextView
+                    android:id="@+id/tvError1"
+                    android:layout_width="268dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:textColor="@color/darkOrange"
+                    android:textSize="10dp"
+                    android:textStyle="normal" />
+
                 <Button
                     android:id="@+id/btnRegisterNow"
                     android:layout_width="174dp"
                     android:layout_height="45dp"
                     android:layout_gravity="center"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="40dp"
                     android:background="@drawable/bg_button"
+                    android:focusable="true"
                     android:hint="Register Now"
+                    android:stateListAnimator="@null"
                     android:textColorHint="@color/white"
                     android:textSize="14sp"
                     android:textStyle="bold" />

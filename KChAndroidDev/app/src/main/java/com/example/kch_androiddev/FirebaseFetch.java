@@ -17,9 +17,10 @@ import static android.content.ContentValues.TAG;
 
 public class FirebaseFetch {
 
-    List<Show> category1Lst = new ArrayList<>();
-    List<Show> category2Lst = new ArrayList<>();
-    List<Show> searchLst = new ArrayList<>();
+    private List<Show> category1Lst = new ArrayList<>();
+    private List<Show> category2Lst = new ArrayList<>();
+    private List<Show> category3Lst = new ArrayList<>();
+    private static List<Show> searchLst = new ArrayList<>();
     private FirebaseFirestore db;
 
     public List<Show> getCategory1Lst() {
@@ -38,7 +39,11 @@ public class FirebaseFetch {
         this.category2Lst = category2Lst;
     }
 
-    public List<Show> getSearchLst() {
+    public List<Show> getCategory3Lst() { return category3Lst; }
+
+    public void setCategory3Lst(List<Show> category3Lst) { this.category3Lst = category3Lst; }
+
+    public static List<Show> getSearchLst() {
         return searchLst;
     }
 
@@ -59,31 +64,43 @@ public class FirebaseFetch {
                                         document.getData().get("description").toString(),
                                         document.getData().get("thumbnail").toString(),
                                         document.getData().get("category").toString(),
-                                        document.getData().get("video_file").toString(),
-                                        document.getData().get("cover_art").toString()
+                                        document.getData().get("subject").toString(),
+                                        document.getData().get("cover_art").toString(),
+                                        document.getData().get("video_file").toString()
                                 ));
-                                if (String.valueOf(document.getData().get("category")).equals("Math")) {
+                                if (String.valueOf(document.getData().get("subject")).equals("Mathematics")) {
                                     category1Lst.add(new Show(document.getData().get("title").toString(),
                                             document.getData().get("description").toString(),
                                             document.getData().get("thumbnail").toString(),
                                             document.getData().get("category").toString(),
-                                            document.getData().get("video_file").toString(),
-                                            document.getData().get("cover_art").toString()
+                                            document.getData().get("subject").toString(),
+                                            document.getData().get("cover_art").toString(),
+                                            document.getData().get("video_file").toString()
                                     ));
                                     Log.d(TAG, "My cat1List" + category1Lst);
-                                } else if (String.valueOf(document.getData().get("category")).equals("Science")) {
+                                } else if (String.valueOf(document.getData().get("subject")).equals("Science")) {
                                     category2Lst.add(new Show(document.getData().get("title").toString(),
                                             document.getData().get("description").toString(),
                                             document.getData().get("thumbnail").toString(),
                                             document.getData().get("category").toString(),
-                                            document.getData().get("video_file").toString(),
-                                            document.getData().get("cover_art").toString()
+                                            document.getData().get("subject").toString(),
+                                            document.getData().get("cover_art").toString(),
+                                            document.getData().get("video_file").toString()
                                     ));
                                     Log.d(TAG, "My cat2List" + category2Lst);
+                                } else if (String.valueOf(document.getData().get("subject")).equals("Filipino")) {
+                                    category3Lst.add(new Show(document.getData().get("title").toString(),
+                                            document.getData().get("description").toString(),
+                                            document.getData().get("thumbnail").toString(),
+                                            document.getData().get("category").toString(),
+                                            document.getData().get("subject").toString(),
+                                            document.getData().get("cover_art").toString(),
+                                            document.getData().get("video_file").toString()
+                                    ));
+                                    Log.d(TAG, "My cat3List" + category3Lst);
                                 } else {
                                     Log.d(TAG, "Data not received");
                                 }
-                                Log.d(TAG, document.getId() + "My List" + document.getData().get("category"));
                                 Log.d(TAG, "My SearchList" + searchLst);
                             }
                         } else {

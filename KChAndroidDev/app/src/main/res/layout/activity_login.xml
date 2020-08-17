@@ -15,12 +15,12 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
             android:layout_width="312dp"
-            android:layout_height="335dp"
+            android:layout_height="325dp"
             android:layout_centerInParent="true"
             android:layout_centerVertical="true"
-            android:elevation="0dp"
-            app:cardBackgroundColor="#ccffffff"
-            app:cardCornerRadius="15dp">
+            app:cardBackgroundColor="#C2ffffff"
+            app:cardCornerRadius="15dp"
+            app:cardPreventCornerOverlap="false">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -37,37 +37,54 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/etEmail"
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="268dp"
-                    android:layout_height="45dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="23dp"
-                    android:layout_marginBottom="16dp"
-                    android:background="@drawable/bg_textbox"
-                    android:elevation="3dp"
-                    android:gravity="center"
-                    android:hint="EMAIL"
-                    android:singleLine="true"
-                    android:textColor="@color/gray"
-                    android:textColorHint="@color/opacityGray"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:elevation="4dp"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false">
 
-                <EditText
-                    android:id="@+id/etPassword"
+                    <EditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="@drawable/bg_textbox"
+                        android:elevation="4dp"
+                        android:hint="Email"
+                        android:singleLine="true"
+                        android:textColor="@color/gray"
+                        android:textColorHint="@color/opacityGray"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="268dp"
-                    android:layout_height="45dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:background="@drawable/bg_textbox"
-                    android:elevation="3dp"
-                    android:gravity="center"
-                    android:hint="PASSWORD"
-                    android:singleLine="true"
-                    android:textColor="@color/gray"
-                    android:textColorHint="@color/opacityGray"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false"
+                    app:passwordToggleEnabled="true">
+
+                    <EditText
+                        android:id="@+id/etPassword"
+                        android:layout_width="268dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/bg_textbox"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:maxLength="16"
+                        android:singleLine="true"
+                        android:textColor="@color/gray"
+                        android:textColorHint="@color/opacityGray"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -91,15 +108,27 @@
 
                 </RelativeLayout>
 
+                <TextView
+                    android:id="@+id/tvError"
+                    android:layout_width="268dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:lines="1"
+                    android:textColor="@color/darkOrange"
+                    android:textSize="10dp"
+                    android:textStyle="normal" />
+
                 <Button
                     android:id="@+id/btnLogin"
                     android:layout_width="174dp"
                     android:layout_height="45dp"
                     android:layout_gravity="center"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="40dp"
                     android:background="@drawable/bg_button"
-                    android:elevation="1dp"
+                    android:focusable="true"
                     android:hint="Login"
                     android:stateListAnimator="@null"
                     android:textColorHint="@color/white"

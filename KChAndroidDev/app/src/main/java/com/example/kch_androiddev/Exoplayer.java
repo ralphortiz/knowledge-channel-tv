@@ -57,11 +57,10 @@ public class Exoplayer extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         btnFullscreen = findViewById(R.id.btnFullscreen);
 
-
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN
                 , WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        Uri videoUrl = Uri.parse("https://firebasestorage.googleapis.com/v0/b/kch-mobile-app.appspot.com/o/Science%20Says%2FPhosphorescence%20_%20Science%20Says.mp4?alt=media&token=35f3e0fe-b8d7-4a7e-bbe7-43d344b140a0");
+        Uri videoUrl = Uri.parse(getIntent().getStringExtra("video_file"));
 
         LoadControl loadControl = new DefaultLoadControl();
         BandwidthMeter bandwidthMeter = new DefaultBandwidthMeter();

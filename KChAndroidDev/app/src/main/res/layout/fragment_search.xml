@@ -3,37 +3,103 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/orange"
-    android:padding="12dp">
+    android:background="@color/lightOrange">
 
-    <EditText
-        android:id="@+id/etSearch"
+    <FrameLayout
+        android:id="@+id/fragmentContainer4"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/bg_search_view"
-        android:drawableLeft="@drawable/ic_search"
-        android:drawablePadding="8dp"
-        android:drawableTint="@color/opacityGray"
-        android:hint="Search"
-        android:imeOptions="actionSearch"
-        android:padding="12dp"
-        android:singleLine="true"
-        android:textColor="@color/gray"
-        android:textColorHint="@color/opacityGray"
-        android:textSize="14sp"
-        android:textStyle="bold" />
+        android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/etSearch">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvSearchShow"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="match_parent">
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/tvSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:minHeight="?attr/actionBarSize"
+                android:text="Explore"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etSearch"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@id/tvSearch"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_search_view"
+                android:drawableLeft="@drawable/ic_search"
+                android:drawablePadding="5dp"
+                android:drawableTint="@color/opacityGray"
+                android:hint="Search"
+                android:imeOptions="actionSearch"
+                android:singleLine="true"
+                android:textColor="@color/gray"
+                android:textColorHint="@color/opacityGray"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etSearch"
+                android:paddingLeft="9dp"
+                android:paddingRight="9dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvSearchShow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/searchView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="170dp"
+                android:orientation="vertical"
+                android:paddingLeft="50dp"
+                android:paddingRight="50dp"
+                android:visibility="invisible">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="130dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/img_empty_search" />
+
+                <TextView
+                    android:id="@+id/tvSearchLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="Sorry, no results found"
+                    android:textColor="@color/gray"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_horizontal"
+                    android:text="We couldn't find what you're looking for"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </FrameLayout>
 
 </RelativeLayout>

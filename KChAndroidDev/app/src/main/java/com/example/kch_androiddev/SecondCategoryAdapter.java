@@ -1,6 +1,8 @@
 package com.example.kch_androiddev;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.bumptech.glide.request.RequestOptions;
 
 import java.util.ArrayList;
@@ -46,9 +49,10 @@ public class SecondCategoryAdapter extends RecyclerView.Adapter<SecondCategoryAd
 
         Show show = mShowList.get(position);
         holder.tvTitle.setText(show.getTitle());
-//        holder.ivThumbnail.setImageResource(show.getThumbnail());
         Glide.with(context)
                 .load(show.getThumbnail())
+                .placeholder(new ColorDrawable(Color.WHITE))
+                .transition(DrawableTransitionOptions.withCrossFade())
                 .apply(RequestOptions.skipMemoryCacheOf(true))
                 .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE))
                 .into(holder.ivThumbnail);

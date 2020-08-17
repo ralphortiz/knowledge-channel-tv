@@ -15,18 +15,20 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
+
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class HomeFragment extends Fragment implements FirstCategoryAdapter.OnShowClickListener, SecondCategoryAdapter.OnShowClickListener {
+public class HomeFragment extends Fragment implements FirstCategoryAdapter.OnShowClickListener, SecondCategoryAdapter.OnShowClickListener, ThirdCategoryAdapter.OnShowClickListener {
 
-    RecyclerView rvFirstCategory, rvSecondCategory;
+    RecyclerView rvFirstCategory, rvSecondCategory, rvThirdCategory;
     SliderView sliderView;
     List<SliderItem> sliderItemList = new ArrayList<>();
     private FirebaseFirestore db;
@@ -40,11 +42,12 @@ public class HomeFragment extends Fragment implements FirstCategoryAdapter.OnSho
         FirebaseApp.initializeApp(getActivity());
         rvFirstCategory = view.findViewById(R.id.rvFirstCategory);
         rvSecondCategory = view.findViewById(R.id.rvSecondCategory);
+        rvThirdCategory = view.findViewById(R.id.rvThirdCategory);
         sliderView = view.findViewById(R.id.sliderView);
 
-        sliderItemList.add(new SliderItem(R.drawable.cover_art1));
-        sliderItemList.add(new SliderItem(R.drawable.cover_art2));
-        sliderItemList.add(new SliderItem(R.drawable.cover_art3));
+        sliderItemList.add(new SliderItem(R.drawable.sample_cover));
+        sliderItemList.add(new SliderItem(R.drawable.sample_cover));
+        sliderItemList.add(new SliderItem(R.drawable.sample_cover));
 
         firebaseFetch.getData();
 
@@ -58,10 +61,14 @@ public class HomeFragment extends Fragment implements FirstCategoryAdapter.OnSho
         rvSecondCategory.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
         secondCategoryAdapter.notifyDataSetChanged();
 
+        ThirdCategoryAdapter thirdCategoryAdapter = new ThirdCategoryAdapter(getActivity(), firebaseFetch.getCategory3Lst(), this);
+        rvThirdCategory.setAdapter(thirdCategoryAdapter);
+        rvThirdCategory.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
+        thirdCategoryAdapter.notifyDataSetChanged();
+
         SliderAdapter sliderAdapter = new SliderAdapter(getActivity(), sliderItemList);
         sliderView.setSliderAdapter(sliderAdapter);
         sliderAdapter.notifyDataSetChanged();
-
         sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM);
         sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
         sliderView.setAutoCycleDirection(SliderView.AUTO_CYCLE_DIRECTION_BACK_AND_FORTH);
@@ -75,15 +82,18 @@ public class HomeFragment extends Fragment implements FirstCategoryAdapter.OnSho
 
     @Override
     public void onShowClick(Show show) {
-        Fragment fragment = new ShowDetailFragment();
+        ShowDetailFragment fragment = new ShowDetailFragment();
         Bundle bundle = new Bundle();
         bundle.putString("title", show.getTitle());
         bundle.putString("description", show.getDescription());
-        bundle.putString("cover_art",show.getCover_art());
+        bundle.putString("category", show.getCategory());
+        bundle.putString("subject", show.getSubject());
+        bundle.putString("cover_art", show.getCover_art());
+        bundle.putString("video_file", show.getVideo_file());
         fragment.setArguments(bundle);
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.fragmentContainer, fragment);
+        fragmentTransaction.add(R.id.fragmentContainer2, fragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
         Toast.makeText(getActivity().getApplicationContext(), "This is item in position " + show.getTitle(), Toast.LENGTH_SHORT).show();
