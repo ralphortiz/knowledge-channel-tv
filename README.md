@@ -1,3 +1,2 @@
 # KCh-Android-App
 
-## Headers
