@@ -1,5 +1,5 @@
 # KCh-Android-App
-<img src="https://user-images.githubusercontent.com/42314281/109256047-26d21e80-7830-11eb-8fd0-782dd154be02.png" align="center" width="150" alt="Project icon">
+<img src="https://user-images.githubusercontent.com/42314281/109276073-8809ea00-7850-11eb-9528-1e3e5b149af5.png" align="center" width="350" alt="Project icon">
 A mobile streaming application for user and a web application for admin (for uploads of videos, thumbnails & cover arts) 
 
 # Library
