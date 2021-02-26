@@ -3,8 +3,7 @@
 A mobile streaming application for user and a web application for admin (for uploads of videos, thumbnails & cover arts) 
 
 # Screens
-<table align="center"><tr><td width="9999">
- <table style="width:100%">
+ <table style="width:100%" align="center">
   <tr>
     <th>Screen</th>
     <th>How it looks</th>
