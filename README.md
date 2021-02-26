@@ -2,8 +2,13 @@
 <img src="https://user-images.githubusercontent.com/42314281/109256047-26d21e80-7830-11eb-8fd0-782dd154be02.png" align="center" width="150" alt="Project icon">
 A mobile streaming application for user and a web application for admin (for uploads of videos, thumbnails & cover arts) 
 
-# Screens
+# Library
+* **Java** for all code
+* **Firebase** for real-time database access
+* **Exoplayer** for media player 
+* **Glide** for image loading and caching
 
+# Screens (Mobile App)
 | **Screen**            | **Sample**                                                                                                                         |
 | :-------------------: | :-----------------------------------------------------------------------------------------------------------------------------:|
 | Login                 | <img src="https://user-images.githubusercontent.com/42314281/109254304-b83f9180-782c-11eb-9217-3a0c95638d4c.png" width="260"/> |
