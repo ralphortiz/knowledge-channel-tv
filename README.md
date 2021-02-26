@@ -1,4 +1,4 @@
-# KCh-Android-App
+# Knowledge Channel TV
 <img src="https://user-images.githubusercontent.com/42314281/109276073-8809ea00-7850-11eb-9528-1e3e5b149af5.png" align="center" width="350" alt="Project icon">
 A mobile streaming application for user and a web application for admin (for uploads of videos, thumbnails & cover arts) 
 
